@@ -49,7 +49,7 @@ public class ProductDAOImpl implements ProductDAO{
 
 		Session currSession = sessionFactory.getCurrentSession();
 		
-		Query query = currSession.createQuery("delete from Product where id=:productId");
+		Query<Product> query = currSession.createQuery("delete from Product where productId=:productId");
 		query.setParameter("productId", productId);
 		
 		query.executeUpdate();

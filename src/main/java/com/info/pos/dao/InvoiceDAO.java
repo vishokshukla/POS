@@ -10,7 +10,7 @@ public interface InvoiceDAO {
 	
 	public void saveInvoice(Invoice invoice);
 	
-	public Invoice getInvoice(String InvoiceId);
+	public Invoice getInvoice(String invoiceId);
 	
-	public void deleteInvoice(String InvoiceId);
+	public void deleteInvoice(String invoiceId);
 }

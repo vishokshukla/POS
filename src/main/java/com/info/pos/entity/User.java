@@ -9,9 +9,11 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User {
 
+	static int i = 1;
+	
 	@Id
 	@Column(name = "user_id")
-	private String userId;
+	private String userId = "user" + i++;;
 	
 	@Column(name = "user_name")
 	private String userName;
@@ -27,12 +29,17 @@ public class User {
 	}
 
 	public User(String userId, String userName, String userPhone, String userRole) {
-		this.userId = userId;
+		
+//		this.userId = "user" + i++;this.User(userName, userPhone, userRole);
+	}
+
+	public User(String userName, String userPhone, String userRole) {
+//		this.userId = "user" + i++;
 		this.userName = userName;
 		this.userPhone = userPhone;
 		this.userRole = userRole;
 	}
-
+	
 	public String getUserId() {
 		return userId;
 	}
