@@ -18,6 +18,9 @@ import com.info.pos.service.POSService;
 @RestController
 @RequestMapping("/cart")
 public class CartController {
+	
+	static int c = 101;
+	static int p = 101;
 
 	@Autowired
 	private POSService posService;
@@ -38,7 +41,7 @@ public class CartController {
 	
 	@PostMapping("/cart") 
 	public Cart addCart(@RequestBody Cart cart) {
-		cart.setCartProductId(null);
+		cart.setCartProductId(cart.new CartProductId("cid" + c++, "pid" + p++));
 		posService.saveCart(cart);
 		return cart;
 	}

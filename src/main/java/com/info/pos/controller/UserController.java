@@ -19,6 +19,8 @@ import com.info.pos.service.POSService;
 @RequestMapping("/user")
 public class UserController {
 
+	static int u = 101;
+	
 	@Autowired
 	private POSService posService;
 	
@@ -37,7 +39,7 @@ public class UserController {
 	
 	@PostMapping("/user")
 	public User addUser(@RequestBody User user) {
-		user.setUserId(null);
+		user.setUserId("uid"+u++);
 		posService.saveUser(user);
 		return user;
 	}
